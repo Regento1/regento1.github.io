@@ -1,0 +1,98 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+}
+body {
+    background-color: aquamarine;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+      }
+header {
+        background-color: #330;
+        color: #ccc;
+        text-align: center;
+        padding: 20px 0;
+      }
+       #grid-flex img {
+        width: 120px;
+      }
+      #grid-float img {
+        width: 150px;
+      }
+h1, h2 {
+    align-items: center;
+}
+section {
+    margin-bottom: 20px;
+  }
+  
+
+/* Apply general styling to the grid items */
+ .grid-item {
+    background-color: floralwhite;
+    border: 0px solid #ccc;
+    padding: 2px;
+    margin-bottom: 20px;
+}
+
+/* Mobile layout: 2 columns, full width for the first item */
+@media (max-width: 767px) {
+    ul#grid-floats, ul#grid-flex {
+      display: flex;
+      flex-direction: column;
+    }  
+    .grid-item {
+      margin-bottom: 10px;
+    }  
+    .grid-item:first-child {
+      width: 100%;
+    }
+  }
+
+  /* Tablet layout: 3 columns, first two items span full width */
+@media (min-width: 768px) and (max-width: 1023px) {
+    ul#grid-floats, ul#grid-flex {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-content: space-between;
+    }
+  
+    .grid-item {
+      margin-bottom: 0;
+    }
+  .grid-item:nth-child(1),
+    .grid-item:nth-child(2) {
+      grid-column: span 2;
+    }
+    .column {
+        width: 100%;
+        height: fit-content;
+    }
+  }
+
+  /* Desktop layout: 4 columns, first item spans two columns */
+@media (min-width: 1024px) {
+    ul#grid-floats, ul#grid-flex {
+      display: grid;
+      grid-template-columns: repeat (4, 1fr);
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .column {
+        width: 100%;
+        height: fit-content;
+    }
+  
+    .grid-item {
+      margin-bottom: 0;
+    } 
+    .grid-item:nth-child(1) {
+      grid-column: span 2;
+    }
+}
+  
+  
+  
